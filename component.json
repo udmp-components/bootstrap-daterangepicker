@@ -1,0 +1,6 @@
+{
+    "repos": "https://github.com/dangrossman/bootstrap-daterangepicker.git",
+    "version": "v2.1.24",
+    "main": "daterangepicker.js",
+    "name": "bootstrap-daterangepicker"
+}
