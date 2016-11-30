@@ -7,11 +7,12 @@
 */
 // Follow the UMD template https://github.com/umdjs/umd/blob/master/templates/returnExportsGlobal.js
 (function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        // AMD. Make globaly available as well
-        define(['moment', 'jquery'], function (moment, jquery) {
-            return (root.daterangepicker = factory(moment, jquery));
-        });
+
+    if (typeof idefine === 'function') {
+	    idefine(function(require, exports, module) {
+	      require('moment');
+	      return (root.daterangepicker = factory(root.moment || moment, (root.jQuery || root.$)));
+	    })
     } else if (typeof module === 'object' && module.exports) {
         // Node / Browserify
         //isomorphic issue
